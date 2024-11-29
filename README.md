@@ -4,7 +4,7 @@
 API목록은 다음과 같습니다.
 
 회원가입 API
-:3020/api/sign-up
+cubetale.shop:3020/api/sign-up
 {
     "playerId": "아이디",
 	"password": "비밀번호 6자리이상",
@@ -14,20 +14,20 @@ API목록은 다음과 같습니다.
 }
 
 로그인 API
-:3020/api/login
+cubetale.shop:3020/api/login
 {
 	"playerId": "회원가입한 아이디",
 	"password": "비밀번호"
 }
 
 캐릭터 생성 API
-:3020/api/char-create
+cubetale.shop:3020/api/char-create
 {
 	"nickname": "닉네임"
 }
 
 캐릭터 상세 조회 API
-:3020/api/char-create/조회할 캐릭터 id
+cubetale.shop:3020/api/char-create/조회할 캐릭터 id
 
 아이템 생성 API
 :3020/api/item-create
@@ -39,7 +39,7 @@ API목록은 다음과 같습니다.
 }
 
 아이템 수정 API
-:3020/api/item-create/조회할 아이템 code
+cubetale.shop:3020/api/item-create/조회할 아이템 code
 {
     "item_name": "수정할 아이템 이름",
 	"item_health": 수정할 체력스텟,
@@ -47,10 +47,10 @@ API목록은 다음과 같습니다.
 }
 
 아이템 목록 조회 API
-:3020/api/item-create
+cubetale.shop:3020/api/item-create
 
 아이템 상세 조회 API
-:3020/api/item-create/조회할 아이템 code
+cubetale.shop:3020/api/item-create/조회할 아이템 code
 
 1. **암호화 방식**
     - 비밀번호를 DB에 저장할 때 Hash를 이용했는데, Hash는 단방향 암호화와 양방향 암호화 중 어떤 암호화 방식에 해당할까요?
