@@ -5,7 +5,7 @@ const router = express.Router();
 
 // 아이템 생성
 router.post('/item-create', async (req, res, next) => {
-    const { item_name, item_stat, item_price } = req.body;
+    const { item_name, item_health, item_power, item_price } = req.body;
 
     const isExistItem = await prisma.items.findFirst({
         where: { item_name }
@@ -18,7 +18,8 @@ router.post('/item-create', async (req, res, next) => {
     const item = await prisma.items.create({
         data: {
             item_name: item_name,
-            item_stat: Object().item_stat,
+            item_power: item_power,
+            item_health: item_health,
             item_price: item_price
         }
     });
@@ -28,10 +29,10 @@ router.post('/item-create', async (req, res, next) => {
 // 아이템 정보 수정
 router.put('/item-create/:item_code', async (req, res, next) => {
     const { item_code } = req.params;
-    const { item_name, item_stat } = req.body;
+    const { item_name, item_health, item_power } = req.body;
 
     const item = await prisma.items.findFirst({
-        where: { item_code }
+        where: { item_code: +item_code }
     });
 
     if (!item)
@@ -40,7 +41,8 @@ router.put('/item-create/:item_code', async (req, res, next) => {
     await prisma.items.update({
         data: {
             item_name: item_name,
-            item_stat: Object().item_stat
+            item_health: item_health,
+            item_power: item_power,
         },
         where: {
             item_code: +item_code,
@@ -69,7 +71,8 @@ router.get('/item-create/:item_code', async(req, res, next) => {
         select: {
             item_code: true,
             item_name: true,
-            item_stat: true,
+            item_health: true,
+            item_power: true,
             item_price: true,
         }
     });

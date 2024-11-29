@@ -41,7 +41,8 @@ model UserInfos {
 model Items {
     item_code Int    @id @default(autoincrement()) @map("item_code")
     item_name String @map("item_name")
-    item_stat Int    @map("item_stat")
+    item_health Int  @map("item_health")
+    item_power Int   @map("item_power")
     item_price Int   @map("item_price")
 
     @@map("Items")

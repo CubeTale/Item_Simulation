@@ -6,7 +6,6 @@ import ErrorHandlingMiddleware from './middlewares/error-handling.middleware.js'
 import UsersRouter from './routes/users.router.js';
 import CharaterRouter from './routes/charater.router.js';
 import ItemRouter from './routes/item.router.js';
-import expressMySQLSession from 'express-mysql-session';
 
 const app = express();
 const PORT = 3020;
